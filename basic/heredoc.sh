@@ -13,7 +13,7 @@ echo "fuga"
 echo "piyo"
 
 # ヒアドキュメントを用いてファイル出力する
-cat <<EOF > test.txt
+cat << EOF > test.txt
 foo
 bar
 baz
