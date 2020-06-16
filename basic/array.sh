@@ -8,3 +8,4 @@ echo ${array[@]}
 
 # 要素の数は0
 echo ${#array[@]}
+# 0

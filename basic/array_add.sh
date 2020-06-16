@@ -11,7 +11,10 @@ array=("${array[@]}" "end")
 
 # 配列のindexを指定して値を取り出して表示する
 echo ${array[0]}
+# lead
 echo ${array[1]}
+# end
 
 # 配列全体を取り出して表示する
 echo ${array[@]}
+# lead end
