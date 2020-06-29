@@ -1,0 +1,21 @@
+# .bashrc
+
+# .bashrc はシェルを起動する都度実行される
+# 主に記述すべき内容は、定数、エイリアス、シェル関数
+
+# 定数
+LSCOLORS=Cxfxcxdxbxegedabagacad
+
+# ll
+alias ll='ls -la'
+alias ls='ls -G'
+
+# git alias
+alias gb='git branch'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gs='git status'
+alias gst='git status'
+alias gcm='git checkout master'
+alias gpom='git pull origin master'
+alias gmm='git merge master'
