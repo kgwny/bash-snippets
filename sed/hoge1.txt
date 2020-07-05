@@ -1,0 +1,7 @@
+# column
+hoge
+ika
+tako
+foo
+bar
+baz
