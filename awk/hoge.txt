@@ -1,0 +1,7 @@
+hoge
+piyo
+tako
+ika
+foo
+bar
+baz

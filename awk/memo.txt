@@ -1,0 +1,63 @@
+# コマンドにスクリプトを含める場合
+# awk 'スクリプト' [ 入力ファイルのパス ]
+
+# 外部のスクリプトファイルを読み込む場合
+# awk -f スクリプトファイルのパス [ 入力ファイルのパス ]
+
+# catコマンドを用いるケース
+# cat foo.log | awk 'スクリプト'
+
+# awk '		
+#     BEGIN {
+#         x=7.9
+#         printf "%d\n", x    # 整数を出力
+#         printf "%+d\n", x   # +-の符号を付けて整数を出力
+#         printf "% d\n", x   # 先頭にスペースを入れて整数を出力
+#         printf "%6d\n", x   # 右詰め、6桁で整数を出力
+#         printf "%-6d#\n", x # 左詰め、6桁で整数を出力
+#         printf "%06d\n", x  # 右詰め、6桁で整数を出力(数値出力以外の桁は0埋め)
+#     }
+# '
+
+# awk '
+# 　BEGIN {
+# 　　FS="n";　　　　　　#　カラムの区切りを改行に
+# 　　RS="";　　　　　　　#　レコードの区切りを空白に（ファイルの3と4の間）
+# 　　OFS="*";　　　　　　#　出力のデミリタ（カンマがあればOFSに変わる $1,$NFの部分）
+# 　　ORS="nn"　　　　　#　出力のデミリタ（改行二つが1回ごとの実行のデミリタとなる）
+# 　}
+# 
+# 　{
+# 　　print NR"." $1,$NF　#　NR：現在の行　/　NF:１レコードの最大カラムの位置
+# 　}
+# 
+# 　END {
+# 　　print FILENAME　　　#　FILENAME : ファイル名の出力
+# 　}' ファイル名
+
+
+# csvファイルの結合
+# awk 単独で data1.csv + data2.csv = data3.csv を実現したい場合（ワンライナー）
+# awk -F, '!F{a[$1]=$2;next}{if($1 in a)$0=$0","a[$1];print}' data2.csv F=1 data1.csv
+
+# その2：色々なコマンドの組み合わせ
+#!/bin/sh
+# sort -k1,1 -t, data1.csv >tmp1
+# sort -k1,1 -t, data2.csv >tmp2
+# paste -d',' tmp1 tmp2 | \
+# awk -f hoge.awk >data3.csv
+# rm -f tmp1 tmp2
+
+# hoge.awk
+# BEGIN {
+#     FS = ","
+# }
+# {
+#     if ($2 == "") {
+#         print $1 ","
+#     } else if ($4 == "") {
+#         print $1 "," $2
+#     } else {
+#         print $1 "," $2 "," $4
+#     }
+# }
