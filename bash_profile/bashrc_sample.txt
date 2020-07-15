@@ -19,3 +19,15 @@ alias gst='git status'
 alias gcm='git checkout master'
 alias gpom='git pull origin master'
 alias gmm='git merge master'
+
+# exit statusを表示する
+if [[ -n "$PS1" ]]; then
+    set -o pipefail
+    trap 'echo -e "\e[41mexit ${PIPESTATUS[*]}\e[0m"' ERR
+fi
+
+# bash_historyをコマンド実行毎に更新する
+if [[ -n "$PS1" ]]; then
+    shopt -s histappend
+    PROMPT_COMMAND='history -a'
+fi

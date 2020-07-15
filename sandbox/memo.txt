@@ -1,0 +1,24 @@
+# コマンドの実行履歴を表示
+$ history
+
+# コマンドの実行履歴には番号が付与されている
+# 下記の要領で再実行が可能
+$ !100
+
+# 直前に実行したコマンドを再実行する
+$ !!
+
+# 直前のコマンドを文字列置換して実行する
+$ echo foo foo
+# foo foo
+
+$ !:gs/foo/bar/
+
+$ echo bar bar
+
+$ echo foo foo
+# foo foo
+
+$ ^foo^bar^
+
+$ echo bar foo
