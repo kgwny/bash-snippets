@@ -1,0 +1,5 @@
+[ -r ~/.profile ] && . ~/.profile             # 環境設定で、かつてはBourne Shell限定の構文
+if [ -n "$PS1" ] ; then                       # インタラクティブか?
+   [ -r ~/.bashrc     ] && . ~/.bashrc        # インタラクティブシェル用のtty/プロンプト/関数設定
+   [ -r ~/.bash_login ] && . ~/.bash_login    # ログインシェル専用のログイン時タスク
+fi                                            # "if" ブロック終了

@@ -3,7 +3,6 @@
 # 毎日同じ時間にファイルを共有ディレクトリにバックアップ
 
 # 変数設定
-
 target_file=./work/tmp-file
 target_dif=./work
 backup_dir=./backup_dir
