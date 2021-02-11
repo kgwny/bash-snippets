@@ -22,7 +22,7 @@ function g {
     cd $(eval $(echo echo $(echo \$DIR_$1)))
 }
 
-# list bookmarks with dirnam
+# list bookmarks with dirname
 function l {
     source ~/.sdirs
     env | grep "^DIR_" | cut -c5- | grep "^.*="
