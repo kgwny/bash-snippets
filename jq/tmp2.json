@@ -1,0 +1,2 @@
+{"coord":{"lon":139.69,"lat":35.69},"sys":{"type":1,"id":7619,"message":0.0956,"country":"JP","sunrise":1418247647,"sunset":1418282892},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"cmc stations","main":{"temp":282.54,"pressure":1006,"humidity":71,"temp_min":280.15,"temp_max":285.15},"wind":{"speed":1.5,"deg":50,"var_beg":10,"var_end":80},"clouds":{"all":75},"dt":1418299200,"id":1850147,"name":"Tokyo","cod":200}
+    
