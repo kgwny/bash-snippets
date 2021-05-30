@@ -4,6 +4,7 @@
 
 var=bar
 echo '{"foo" : "'$var'"}' | jq
-{
-  "foo": "bar"
-}
+
+# {
+#   "foo": "bar"
+# }
