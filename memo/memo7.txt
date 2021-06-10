@@ -1,0 +1,25 @@
+★入出力・リダイレクト(>)
+コマンドは 標準入力(stdin) から読み込み、標準出力(stdout), 標準エラー出力(stderr) に書き出すことができます
+
+command < file			    # fileの内容をcommandの標準入力に渡す
+コマンドの標準出力、標準エラー出力をファイルに書き出すには次のようにします。
+1 は標準出力、2 は標準エラー出力、& は両方を意味します。1> は > と省略できます。
+
+command > file			    # 標準出力をfileに書き出す
+command 1> file		        # 標準出力をfileに書き出す(>と等価)
+command 2> file		        # 標準エラー出力をfileに書き出す
+command 1> file1 2> file2	# 標準出力をfile1に、標準エラー出力をfile2に書き出す
+command &> file		        # 標準出力と標準エラー出力をfileに書き出す
+command >& file		        # &>と同義
+> を >> とするとファイルを上書きするのではなく、ファイルに追記するようになります。
+
+command >> file		        # 標準出力をfileに追記する
+command 1>> file		    # 標準出力をfileに追記する(>>と等価)
+command 2>> file		    # 標準エラー出力をfileに追記する
+command 1>> file1 2>> file2	# 標準出力をfile1に、標準エラー出力をfile2に追記する
+command &>> file		    # 標準出力と標準エラー出力をfileに追記する
+command >>& file		    # &>>と同義 ... と思ったら嘘。使用できない
+2>&1 は 2 の出力を 1 に、1>&2 は 1 の出力を 2にマージすることを意味します。
+
+command > file 2>&1		    # &> と等価 (2を1の出力にマージする)
+command >> file 2>&1		# &>> と等価 (2を1の出力にマージする)
